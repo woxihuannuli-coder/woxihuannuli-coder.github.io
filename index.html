@@ -3,26 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>김지수 | 데이터 품질관리 · 데이터 표준화 · 데이터 QA</title>
+<title>김지수 | 데이터 QA · AI 서비스 품질 검증</title>
 <style>
   :root {
-    --cream: #FBF7EF;
-    --paper: #FFFFFF;
-    --ink: #25211C;
-    --ink-soft: #675F54;
-    --ink-faint: #9A9186;
-    --brown: #8C5A3C;
-    --brown-deep: #6F3F27;
-    --brown-tint: #F3E2D4;
-    --olive: #7E936D;
-    --olive-tint: #E9EFE3;
-    --blue-gray: #65758B;
-    --line: #E8DED1;
-    --shadow-sm: 0 2px 10px rgba(55, 45, 35, .06);
-    --shadow: 0 14px 36px rgba(55, 45, 35, .09);
-    --radius-lg: 28px;
-    --radius-md: 18px;
-    --radius-sm: 12px;
+    --cream:      #FBF6EC;
+    --cream-deep: #F3ECDC;
+    --card:       #FFFFFF;
+    --ink:        #2B2620;
+    --ink-soft:   #6B6358;
+    --ink-faint:  #9A9184;
+    --coral:      #E8835F;
+    --coral-deep: #D86A45;
+    --coral-tint: #FBE5DA;
+    --sage:       #8FA888;
+    --sage-tint:  #E7EEE2;
+    --line:       #ECE3D0;
+    --shadow-sm:  0 2px 10px rgba(60,50,30,.05);
+    --shadow:     0 12px 32px rgba(60,50,30,.08);
+    --radius-lg:  28px;
+    --radius-md:  18px;
+    --radius-sm:  12px;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -38,25 +38,26 @@
   a { color: inherit; }
   .wrap { max-width: 980px; margin: 0 auto; padding: 0 24px; }
 
+  /* Nav */
   nav {
     position: sticky; top: 0; z-index: 99;
-    background: rgba(251,247,239,.88);
+    background: rgba(251,246,236,.84);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--line);
   }
   nav .wrap {
     display: flex; align-items: center; justify-content: space-between;
-    min-height: 66px; gap: 20px;
+    height: 66px;
   }
   .nav-brand {
     font-size: 15px; font-weight: 800; letter-spacing: -.2px;
-    display: flex; align-items: center; gap: 9px;
+    display: flex; align-items: center; gap: 8px;
   }
   .nav-brand .dot {
     width: 9px; height: 9px; border-radius: 50%;
-    background: var(--brown); display: inline-block;
+    background: var(--coral); display: inline-block;
   }
-  .nav-links { display: flex; align-items: center; gap: 24px; }
+  .nav-links { display: flex; align-items: center; gap: 26px; }
   .nav-links a {
     font-size: 14px; font-weight: 700; color: var(--ink-soft);
     text-decoration: none;
@@ -64,46 +65,47 @@
   .nav-links a:hover { color: var(--ink); }
   .nav-cta {
     background: var(--ink); color: var(--cream) !important;
-    padding: 9px 17px; border-radius: 999px; font-size: 13.5px;
+    padding: 9px 18px; border-radius: 999px; font-size: 13.5px;
   }
 
+  /* Hero */
   .hero {
-    padding: 78px 0 50px;
+    padding: 76px 0 48px;
     text-align: center;
     position: relative;
     overflow: hidden;
   }
   .hero::before {
     content: "";
-    position: absolute; top: -120px; right: -100px;
+    position: absolute; top: -120px; right: -120px;
     width: 360px; height: 360px; border-radius: 50%;
-    background: radial-gradient(circle, var(--brown-tint) 0%, transparent 70%);
+    background: radial-gradient(circle, var(--coral-tint) 0%, transparent 70%);
     z-index: 0;
   }
   .hero::after {
     content: "";
     position: absolute; bottom: -150px; left: -140px;
     width: 360px; height: 360px; border-radius: 50%;
-    background: radial-gradient(circle, var(--olive-tint) 0%, transparent 70%);
+    background: radial-gradient(circle, var(--sage-tint) 0%, transparent 70%);
     z-index: 0;
   }
   .hero .wrap { position: relative; z-index: 1; }
   .hero-kicker {
     display: inline-flex; align-items: center; gap: 8px;
-    background: var(--paper); border: 1px solid var(--line);
+    background: var(--card); border: 1px solid var(--line);
     border-radius: 999px; padding: 7px 16px;
-    font-size: 12.5px; font-weight: 800; color: var(--brown-deep);
+    font-size: 12.5px; font-weight: 800; color: var(--coral-deep);
     margin-bottom: 24px; box-shadow: var(--shadow-sm);
   }
   .hero h1 {
-    font-size: clamp(33px, 5.6vw, 56px);
-    font-weight: 850; letter-spacing: -1.5px; line-height: 1.14;
-    margin: 0 auto 20px; max-width: 790px;
+    font-size: clamp(34px, 6vw, 58px);
+    font-weight: 800; letter-spacing: -1.5px; line-height: 1.12;
+    margin: 0 auto 20px; max-width: 760px;
   }
-  .hero h1 em { font-style: normal; color: var(--brown-deep); }
+  .hero h1 em { font-style: normal; color: var(--coral-deep); }
   .hero-tagline {
     font-size: clamp(16px, 2vw, 19px);
-    color: var(--ink-soft); max-width: 680px;
+    color: var(--ink-soft); max-width: 610px;
     margin: 0 auto 32px;
   }
   .hero-badges {
@@ -111,18 +113,18 @@
   }
   .hero-badge {
     display: inline-flex; align-items: center; gap: 8px;
-    background: var(--paper); border: 1px solid var(--line);
+    background: var(--card); border: 1px solid var(--line);
     border-radius: 999px; padding: 9px 18px;
-    font-size: 13.5px; font-weight: 750; box-shadow: var(--shadow-sm);
+    font-size: 13.5px; font-weight: 700; box-shadow: var(--shadow-sm);
   }
   .hero-badge .check {
     display: inline-flex; align-items: center; justify-content: center;
     width: 18px; height: 18px; border-radius: 50%;
-    background: var(--olive); color: #fff; font-size: 10px; font-weight: 800;
+    background: var(--sage); color: #fff; font-size: 10px; font-weight: 800;
   }
   .hero-strip {
     margin-top: 42px;
-    background: var(--paper);
+    background: var(--card);
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow);
@@ -132,66 +134,69 @@
     gap: 14px;
   }
   .hero-strip-item {
-    background: #F3ECDD;
+    background: var(--cream-deep);
     border-radius: var(--radius-sm);
     padding: 18px 14px;
     text-align: left;
   }
   .hero-strip-num {
-    font-size: 26px; font-weight: 850; color: var(--brown-deep);
+    font-size: 26px; font-weight: 800; color: var(--coral-deep);
     letter-spacing: -1px; margin-bottom: 4px;
   }
-  .hero-strip-label { font-size: 12.5px; font-weight: 750; color: var(--ink-soft); }
+  .hero-strip-label { font-size: 12.5px; font-weight: 700; color: var(--ink-soft); }
 
+  /* Section */
   .section { padding: 56px 0; }
   .section--card {
-    background: var(--paper);
+    background: var(--card);
     border-radius: var(--radius-lg);
     max-width: 932px;
     margin: 0 auto;
     padding: 44px 0 52px;
-    box-shadow: var(--shadow-sm);
   }
   .section--card .wrap { padding: 0 36px; }
+
   .section-eyebrow {
     display: inline-block;
-    font-size: 12.5px; font-weight: 850; letter-spacing: .6px;
-    text-transform: uppercase; color: var(--brown-deep);
-    background: var(--brown-tint); border-radius: 999px;
+    font-size: 12.5px; font-weight: 800; letter-spacing: .6px;
+    text-transform: uppercase; color: var(--coral-deep);
+    background: var(--coral-tint); border-radius: 999px;
     padding: 5px 14px; margin-bottom: 16px;
   }
-  .section-eyebrow.olive { color: #526944; background: var(--olive-tint); }
+  .section-eyebrow.sage { color: #4F6B49; background: var(--sage-tint); }
   .section-title {
     font-size: clamp(24px, 3.4vw, 34px);
-    font-weight: 850; letter-spacing: -.7px;
-    margin-bottom: 14px; max-width: 760px;
+    font-weight: 800; letter-spacing: -.7px;
+    margin-bottom: 14px; max-width: 700px;
   }
   .section-sub {
     font-size: 15.5px; color: var(--ink-soft);
-    max-width: 710px; margin-bottom: 34px;
+    max-width: 640px; margin-bottom: 34px;
   }
 
+  /* Skills */
   .skill-grid {
     display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
   }
   .skill-card {
-    background: var(--paper); border: 1px solid var(--line);
+    background: var(--card); border: 1px solid var(--line);
     border-radius: var(--radius-md); padding: 22px 20px;
     box-shadow: var(--shadow-sm);
   }
   .skill-icon {
     width: 40px; height: 40px; border-radius: 12px;
-    background: var(--brown-tint);
+    background: var(--coral-tint);
     display: flex; align-items: center; justify-content: center;
     font-size: 19px; margin-bottom: 14px;
   }
-  .skill-card:nth-child(3n+2) .skill-icon { background: var(--olive-tint); }
-  .skill-card:nth-child(3n) .skill-icon { background: #EFE8DC; }
-  .skill-name { font-size: 15px; font-weight: 850; margin-bottom: 6px; }
+  .skill-card:nth-child(3n+2) .skill-icon { background: var(--sage-tint); }
+  .skill-card:nth-child(3n) .skill-icon { background: var(--cream-deep); }
+  .skill-name { font-size: 15px; font-weight: 800; margin-bottom: 6px; }
   .skill-desc { font-size: 13.5px; color: var(--ink-soft); line-height: 1.6; }
 
+  /* Projects */
   .project-card {
-    background: var(--paper);
+    background: var(--card);
     border: 1px solid var(--line);
     border-radius: var(--radius-md);
     padding: 30px 30px 26px;
@@ -199,7 +204,7 @@
     margin-bottom: 18px;
   }
   .project-title {
-    font-size: 18px; font-weight: 850;
+    font-size: 18px; font-weight: 800;
     line-height: 1.4; letter-spacing: -.3px;
     margin-bottom: 14px;
   }
@@ -207,34 +212,19 @@
     display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px;
   }
   .project-badge {
-    font-size: 12px; font-weight: 850;
-    background: var(--brown-tint); color: var(--brown-deep);
+    font-size: 12px; font-weight: 800;
+    background: var(--coral-tint); color: var(--coral-deep);
     border-radius: 999px; padding: 5px 13px; white-space: nowrap;
   }
-  .project-badge--data { background: var(--olive-tint); color: #526944; }
+  .project-badge--team { background: var(--sage-tint); color: #4F6B49; }
+
   .sub-label {
-    font-size: 11.5px; font-weight: 850; letter-spacing: .6px;
+    font-size: 11.5px; font-weight: 800; letter-spacing: .6px;
     text-transform: uppercase; color: var(--ink-faint);
     margin: 18px 0 8px;
   }
   .goal-text { font-size: 14.5px; color: var(--ink-soft); line-height: 1.75; }
-  .task-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
-  .task-list li {
-    font-size: 14.5px; color: var(--ink);
-    padding-left: 22px; position: relative; line-height: 1.65;
-  }
-  .task-list li::before {
-    content: "";
-    position: absolute; left: 0; top: 9px;
-    width: 7px; height: 7px; border-radius: 50%;
-    background: var(--brown);
-  }
-  .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
-  .tag {
-    font-family: "SF Mono", "Menlo", monospace; font-size: 12px;
-    background: #F3ECDD; color: var(--ink);
-    border: 1px solid var(--line); border-radius: 8px; padding: 4px 10px;
-  }
+
   .project-actions {
     display: flex; flex-wrap: wrap; gap: 10px;
     margin: 18px 0 4px;
@@ -244,38 +234,58 @@
     min-height: 44px;
     padding: 12px 22px;
     border-radius: 999px;
-    font-size: 14.5px; font-weight: 850;
+    font-size: 14.5px; font-weight: 800;
     text-decoration: none;
     transition: transform .15s, box-shadow .15s, opacity .15s;
   }
   .btn:hover { transform: translateY(-2px); }
   .btn-primary {
-    background: var(--brown);
+    background: var(--coral);
     color: #fff;
-    box-shadow: 0 9px 18px rgba(111,63,39,.18);
+    box-shadow: 0 9px 18px rgba(216,106,69,.18);
   }
   .btn-outline {
     background: #fff;
     color: var(--ink-soft);
     border: 1.5px solid var(--line);
   }
+
+  .task-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .task-list li {
+    font-size: 14.5px; color: var(--ink);
+    padding-left: 22px; position: relative; line-height: 1.65;
+  }
+  .task-list li::before {
+    content: "";
+    position: absolute; left: 0; top: 9px;
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--coral);
+  }
+
+  .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+  .tag {
+    font-family: "SF Mono", "Menlo", monospace; font-size: 12px;
+    background: var(--cream-deep); color: var(--ink);
+    border: 1px solid var(--line); border-radius: 8px; padding: 4px 10px;
+  }
   .connect-box {
-    background: var(--olive-tint); border-radius: var(--radius-sm);
+    background: var(--sage-tint); border-radius: var(--radius-sm);
     padding: 14px 18px; margin-top: 18px;
     font-size: 13.5px; color: #3E5638; line-height: 1.65;
   }
-  .connect-box strong { font-weight: 850; }
+  .connect-box strong { font-weight: 800; }
   .caution-box {
-    background: #F7ECE4; border-radius: var(--radius-sm);
+    background: var(--coral-tint); border-radius: var(--radius-sm);
     padding: 12px 18px; margin-top: 12px;
-    font-size: 13px; color: #7C4A32; line-height: 1.65;
+    font-size: 13px; color: #8A4226; line-height: 1.65;
   }
 
+  /* Outputs */
   .outputs-list {
     list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
   }
   .outputs-list li {
-    background: #F3ECDD; border: 1px solid var(--line);
+    background: var(--cream-deep); border: 1px solid var(--line);
     border-radius: var(--radius-sm); padding: 16px 18px;
     font-size: 14px; color: var(--ink); line-height: 1.6;
     display: flex; gap: 10px; align-items: flex-start;
@@ -283,44 +293,48 @@
   .outputs-list li::before {
     content: "✓"; flex-shrink: 0; margin-top: 1px;
     width: 20px; height: 20px; border-radius: 50%;
-    background: var(--brown); color: #fff;
-    font-size: 11px; font-weight: 850;
+    background: var(--coral); color: #fff;
+    font-size: 11px; font-weight: 800;
     display: flex; align-items: center; justify-content: center;
   }
-  .governance-grid {
+
+  /* Contribution */
+  .contrib-grid {
     display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px;
   }
-  .governance-item {
+  .contrib-item {
     display: flex; gap: 12px; align-items: flex-start;
-    background: #F3ECDD;
+    background: var(--cream-deep);
     border: 1px solid var(--line); border-radius: var(--radius-sm);
     padding: 18px; box-shadow: var(--shadow-sm);
   }
-  .governance-dot {
+  .contrib-dot {
     width: 24px; height: 24px; border-radius: 50%;
-    background: var(--olive); color: #fff;
-    font-size: 11px; font-weight: 850;
+    background: var(--sage); color: #fff;
+    font-size: 11px; font-weight: 800;
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0; margin-top: 1px;
   }
-  .governance-text { font-size: 14px; color: var(--ink); line-height: 1.6; font-weight: 500; }
+  .contrib-text { font-size: 14px; color: var(--ink); line-height: 1.6; font-weight: 500; }
 
+  /* About */
   .about-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .about-card {
-    background: var(--paper); border: 1px solid var(--line);
+    background: var(--card); border: 1px solid var(--line);
     border-radius: var(--radius-md); padding: 24px;
     box-shadow: var(--shadow-sm);
   }
   .about-icon {
     width: 38px; height: 38px; border-radius: 11px;
-    background: var(--brown-tint);
+    background: var(--coral-tint);
     display: flex; align-items: center; justify-content: center;
     font-size: 18px; margin-bottom: 14px;
   }
-  .about-card:nth-child(even) .about-icon { background: var(--olive-tint); }
-  .about-name { font-size: 14.5px; font-weight: 850; margin-bottom: 7px; }
+  .about-card:nth-child(even) .about-icon { background: var(--sage-tint); }
+  .about-name { font-size: 14.5px; font-weight: 800; margin-bottom: 7px; }
   .about-desc { font-size: 13.5px; color: var(--ink-soft); line-height: 1.7; }
 
+  /* CTA */
   .links-cta {
     background: var(--ink);
     border-radius: var(--radius-lg);
@@ -329,11 +343,11 @@
     color: var(--cream);
   }
   .links-cta .section-title { color: var(--cream); margin: 0 auto 12px; }
-  .links-cta .section-sub { color: rgba(251,247,239,.68); margin: 0 auto 28px; }
+  .links-cta .section-sub { color: rgba(251,246,236,.65); margin: 0 auto 28px; }
   .link-row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
   .links-cta .btn-outline {
-    background: rgba(251,247,239,.08); color: var(--cream);
-    border-color: rgba(251,247,239,.25);
+    background: rgba(251,246,236,.08); color: var(--cream);
+    border-color: rgba(251,246,236,.25);
   }
   .email-pill {
     display: inline-flex;
@@ -343,15 +357,17 @@
     min-height: 44px;
     padding: 12px 24px;
     border-radius: 999px;
-    border: 1.5px solid rgba(251,247,239,.35);
+    border: 1.5px solid rgba(251,246,236,.35);
     color: var(--cream);
-    background: rgba(251,247,239,.06);
+    background: rgba(251,246,236,.06);
     font-size: 14.5px;
-    font-weight: 850;
+    font-weight: 800;
     text-decoration: none;
     word-break: break-all;
   }
-  .email-pill:hover { background: rgba(251,247,239,.12); }
+  .email-pill:hover {
+    background: rgba(251,246,236,.12);
+  }
 
   footer {
     text-align: center; padding: 32px 22px 40px;
@@ -359,11 +375,11 @@
   }
 
   @media (max-width: 760px) {
-    nav .wrap { height: auto; padding-top: 13px; padding-bottom: 13px; flex-wrap: wrap; }
+    nav .wrap { height: auto; padding-top: 13px; padding-bottom: 13px; gap: 12px; flex-wrap: wrap; }
     .nav-links a:not(.nav-cta) { display: none; }
     .hero-strip { grid-template-columns: repeat(2, 1fr); }
     .skill-grid { grid-template-columns: repeat(2, 1fr); }
-    .governance-grid { grid-template-columns: 1fr; }
+    .contrib-grid { grid-template-columns: 1fr; }
     .about-grid { grid-template-columns: 1fr; }
     .outputs-list { grid-template-columns: 1fr; }
     .section--card .wrap { padding: 0 22px; }
@@ -381,12 +397,12 @@
 
 <nav>
   <div class="wrap">
-    <span class="nav-brand"><span class="dot"></span>김지수 · 데이터 품질관리 · 데이터 표준화</span>
+    <span class="nav-brand"><span class="dot"></span>김지수 · 데이터 QA · AI 서비스 품질</span>
     <div class="nav-links">
       <a href="#skills">역량</a>
       <a href="#projects">프로젝트</a>
       <a href="#outputs">산출물</a>
-      <a href="#governance">기여방식</a>
+      <a href="#contribute">기여</a>
       <a href="#about">소개</a>
       <a href="#links" class="nav-cta">연락하기</a>
     </div>
@@ -395,30 +411,30 @@
 
 <section class="hero">
   <div class="wrap">
-    <span class="hero-kicker">📋 Data Quality · Data Governance Portfolio</span>
-    <h1>데이터가 정확한 기준에 따라<br><em>정리·검증·관리되는 과정</em>에 집중합니다.</h1>
+    <span class="hero-kicker">📋 PR Portfolio · 2026</span>
+    <h1>AI 서비스의 데이터와 기능 흐름을<br><em>한 번 더 검수합니다.</em></h1>
     <p class="hero-tagline">
-      Python · SQL · pandas로 데이터 정제와 검증을 실습하고, 누락·중복·허용값·적재 결과를 확인했습니다.<br>
-      데이터가 신뢰 가능한 상태로 정의·표준화·기록되는 과정에 관심이 있습니다.
+      React · TypeScript로 사용자 입력 흐름을 구현하고, Python · SQL로 데이터 정제·검수 과정을 실습했습니다.<br>
+      AI 도구를 활용하되 실행 결과를 직접 확인하며 기능 구현·오류 기록·문서화 역량을 쌓아왔습니다.
     </p>
     <div class="hero-badges">
-      <span class="hero-badge"><span class="check">✓</span>데이터 품질 검증 · NULL/중복/허용값 점검</span>
-      <span class="hero-badge"><span class="check">✓</span>SQL · SQLite 기반 적재 결과 확인</span>
-      <span class="hero-badge"><span class="check">✓</span>정제 전·후 비교 및 검증 결과 문서화</span>
+      <span class="hero-badge"><span class="check">✓</span>React · TypeScript 기반 일기/리포트 기능 구현</span>
+      <span class="hero-badge"><span class="check">✓</span>데이터 정제 · 검수 · 오류 기록 실습</span>
+      <span class="hero-badge"><span class="check">✓</span>식약처 공공데이터 구조 파악 · 적재 확인 경험</span>
     </div>
 
     <div class="hero-strip">
       <div class="hero-strip-item">
         <div class="hero-strip-num">230건</div>
-        <div class="hero-strip-label">공공데이터 품질 검증</div>
+        <div class="hero-strip-label">도서관 데이터 QA 검증</div>
       </div>
       <div class="hero-strip-item">
         <div class="hero-strip-num">0건</div>
         <div class="hero-strip-label">매핑 실패·중복·region_gu NULL</div>
       </div>
       <div class="hero-strip-item">
-        <div class="hero-strip-num">4개</div>
-        <div class="hero-strip-label">행정구역 허용값 기준 정의</div>
+        <div class="hero-strip-num">1개</div>
+        <div class="hero-strip-label">AI 서비스 기능 구현 프로젝트</div>
       </div>
       <div class="hero-strip-item">
         <div class="hero-strip-num">4,729건</div>
@@ -431,39 +447,39 @@
 <section class="section" id="skills">
   <div class="wrap">
     <span class="section-eyebrow">Core Skills</span>
-    <h2 class="section-title">데이터 거버넌스 직무와 연결되는 핵심 역량</h2>
-    <p class="section-sub">데이터가 활용되기 전 필요한 기준 설정, 정제, 검증, 적재 확인, 문서화 과정을 중심으로 정리했습니다.</p>
+    <h2 class="section-title">지원 직무와 연결되는 핵심 역량</h2>
+    <p class="section-sub">데이터가 다음 단계로 넘어가기 전 거치는 정제·검수·기록 과정을 직접 실습했습니다.</p>
 
     <div class="skill-grid">
       <div class="skill-card">
-        <div class="skill-icon">🔍</div>
-        <div class="skill-name">데이터 품질 검증</div>
-        <div class="skill-desc">NULL, 중복, 허용값 외 데이터, 적재 행수 등 기준 기반 품질 점검</div>
+        <div class="skill-icon">🧩</div>
+        <div class="skill-name">React · TypeScript 기능 구현</div>
+        <div class="skill-desc">날짜 선택, 일기 작성, 감정 기록 등 사용자 화면 상태 관리</div>
       </div>
       <div class="skill-card">
-        <div class="skill-icon">🗄️</div>
-        <div class="skill-name">SQL · SQLite · MySQL</div>
-        <div class="skill-desc">정제 데이터 적재, 조회, 그룹별 집계, 이상값 확인</div>
+        <div class="skill-icon">🔗</div>
+        <div class="skill-name">API · 데이터 흐름 연결</div>
+        <div class="skill-desc">프론트 화면 입력 → 백엔드 API 요청 → 저장·조회 결과 확인</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🔍</div>
+        <div class="skill-name">데이터 검수</div>
+        <div class="skill-desc">허용값 검증, NULL 체크, 오류 데이터 감지</div>
       </div>
       <div class="skill-card">
         <div class="skill-icon">🐍</div>
         <div class="skill-name">Python · pandas</div>
-        <div class="skill-desc">CSV 전처리, 컬럼 생성, 표준화 매핑, 검증 스크립트 실행</div>
+        <div class="skill-desc">CSV 전처리 코드 실행 및 결과 직접 확인</div>
       </div>
       <div class="skill-card">
-        <div class="skill-icon">📚</div>
-        <div class="skill-name">데이터 표준화 관점</div>
-        <div class="skill-desc">허용값 기준 정의, 코드값 관리, 정제 전·후 상태 비교</div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-icon">🧪</div>
-        <div class="skill-name">테스트 케이스 · 오류 주입</div>
-        <div class="skill-desc">pytest로 검증 조건을 자동화하고 의도적 오류 주입으로 탐지 여부 확인</div>
+        <div class="skill-icon">🗄️</div>
+        <div class="skill-name">SQL · SQLite · MySQL</div>
+        <div class="skill-desc">정제 데이터 적재, 조회, 이상값 검색</div>
       </div>
       <div class="skill-card">
         <div class="skill-icon">📝</div>
-        <div class="skill-name">문서화 · 기록 관리</div>
-        <div class="skill-desc">검증 조건, 오류 가능성, 결과 수치, 수정 이력을 남기는 방식으로 작업</div>
+        <div class="skill-name">오류 기록 · 문서화</div>
+        <div class="skill-desc">검증 로그, 오류 조건·결과 정리 및 리포팅</div>
       </div>
     </div>
   </div>
@@ -471,44 +487,87 @@
 
 <section class="section section--card" id="projects">
   <div class="wrap">
-    <span class="section-eyebrow olive">Projects</span>
-    <h2 class="section-title">데이터 품질·표준화 관점의 프로젝트</h2>
-    <p class="section-sub">데이터 거버넌스 직무에서 요구되는 데이터 현황 파악, 기준 정의, 품질 점검, 결과 기록의 흐름에 맞춰 프로젝트를 재정리했습니다.</p>
+    <span class="section-eyebrow sage">Projects</span>
+    <h2 class="section-title">AI 서비스 구현 · 데이터 정제 · 검수 프로젝트</h2>
+    <p class="section-sub">AI 헬스케어 팀 프로젝트와 공공데이터 실습을 통해 기능 구현→데이터 연결→검증→기록의 흐름을 경험했습니다.</p>
 
     <div class="project-card">
-      <div class="project-title">화성시 작은도서관 데이터 QA — 공공데이터 품질 검증</div>
+      <div class="project-title">DodakTalk — AI 헬스케어 플랫폼 (팀 프로젝트)</div>
       <div class="project-badges">
-        <span class="project-badge project-badge--data">데이터 품질관리</span>
-        <span class="project-badge">허용값 기준 정의</span>
-        <span class="project-badge">NULL · 중복 검증</span>
-        <span class="project-badge">SQLite 적재 확인</span>
+        <span class="project-badge project-badge--team">팀 프로젝트</span>
+        <span class="project-badge">React · TypeScript 기능 구현</span>
+        <span class="project-badge">일기 · 감정 기록 · 리포트</span>
+        <span class="project-badge">데이터 흐름 검증</span>
+      </div>
+
+      <div class="sub-label">프로젝트 개요</div>
+      <p class="goal-text">복약 관리, 감정 기록, AI 약물 상담을 하나의 흐름으로 연결한 AI 헬스케어 서비스입니다. 저는 이 프로젝트에서 감정 기록·일기·리포트 기능 구현과 사용자 입력 데이터가 날짜별로 저장·조회되는 흐름을 중심으로 기여했습니다.</p>
+
+      <div class="project-actions" aria-label="DodakTalk project links">
+        <a href="dodactalk-report.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">📄 발표자료 보기</a>
+        <a href="https://github.com/AI-HealthCare-01/AI_01_05" target="_blank" rel="noopener noreferrer" class="btn btn-outline">🔗 GitHub 보기</a>
+      </div>
+
+      <div class="sub-label">담당 구현 범위</div>
+      <ul class="task-list">
+        <li>React/TypeScript 기반으로 날짜별 감정 기록 및 일기 작성 화면 구현</li>
+        <li>선택 날짜, 작성 내용, 저장된 기록, 진료 배너 등 화면 상태 관리</li>
+        <li>일기 저장·조회·수정·삭제 흐름을 백엔드 API와 연결</li>
+        <li>저장된 감정 기록을 캘린더 및 일기 상세 화면과 연결</li>
+        <li>일기 데이터를 기반으로 리포트 조회/생성 흐름 구현</li>
+        <li>선택 날짜 기준 진료 배너 계산 로직 구현</li>
+        <li>한국 시간 기준 날짜 처리로 today 판단 오류 개선</li>
+      </ul>
+
+      <div class="sub-label">데이터·검색 품질 관련 추가 기여</div>
+      <ul class="task-list">
+        <li>식약처 DUR 공공데이터 CSV 8종 수집 및 파일 구조 파악</li>
+        <li>의약품 마스터 데이터 DB 적재 스크립트 실행 및 적재 결과 확인</li>
+        <li>FAISS 임베딩 스크립트 실행 결과 확인 및 인덱싱 건수 검토</li>
+        <li>약 검색 기능에서 검색어 시작일치 결과를 우선 노출하도록 검색 로직 개선</li>
+        <li>복약 체크 중복 클릭으로 인한 중복 요청 방지 로직 개선</li>
+      </ul>
+
+      <div class="sub-label">사용 기술</div>
+      <div class="tag-row">
+        <span class="tag">React</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">Python</span>
+        <span class="tag">GitHub Actions</span>
+        <span class="tag">AI Coding Tools</span>
+      </div>
+
+      <div class="caution-box">
+        ※ AI 도구의 도움을 받아 기능을 구현했으며, 구현 후 실행 결과·화면 흐름·데이터 연결 상태를 직접 확인했습니다. LLM·RAG 핵심 모델 개발은 팀원이 담당했고, 본인은 일기/감정 기록/리포트 기능과 일부 데이터·검색 품질 개선을 중심으로 기여했습니다.
+      </div>
+      <div class="connect-box">
+        <strong>직무 연결</strong>&nbsp; AI R&D 환경에서 필요한 기능 구현 보조, 사용자 데이터 흐름 이해, 실행 결과 확인, 오류 재현·기록 역량과 연결됩니다.
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-title">화성시 작은도서관 데이터 QA</div>
+      <div class="project-badges">
+        <span class="project-badge">데이터 검수 · QA</span>
+        <span class="project-badge">오류 탐지 자동화</span>
       </div>
 
       <div class="sub-label">목표</div>
-      <p class="goal-text">
-        화성시 작은도서관 데이터를 대상으로 주소 기반 행정구역 기준을 정리하고, 정제된 데이터가 기준에 맞게 관리되는지 검증했습니다.
-        단순 분석보다 데이터의 누락·중복·허용값 오류를 확인하고 결과를 기록하는 QA 흐름에 초점을 두었습니다.
-      </p>
+      <p class="goal-text">공공 도서관 데이터의 품질 기준을 설정하고 오류를 자동 감지하는 QA 파이프라인 연습</p>
 
       <div class="project-actions" aria-label="화성시 작은도서관 데이터 QA project links">
-        <a href="https://github.com/woxihuannuli-coder/local-public-indicator-pipeline" target="_blank" rel="noopener noreferrer" class="btn btn-primary">🔗 GitHub 보기</a>
+        <a href="https://github.com/woxihuannuli-coder/local-public-indicator-pipeline" target="_blank" rel="noopener noreferrer" class="btn btn-outline">🔗 GitHub 보기</a>
       </div>
 
       <div class="sub-label">수행 내용</div>
       <ul class="task-list">
-        <li>전체 230건의 작은도서관 데이터를 대상으로 주소 기반 행정구역을 4개 허용값으로 표준화 매핑</li>
-        <li>region_gu 컬럼의 NULL 여부와 허용값 외 데이터 존재 여부를 pytest 기반 테스트 케이스로 검증</li>
-        <li>의도적으로 잘못된 구 이름과 결측치를 주입하여 검증 로직이 실제 오류를 탐지하는지 확인</li>
-        <li>CSV 데이터를 SQLite에 적재한 뒤 SQL 조회로 행수와 정제 결과를 확인</li>
-        <li>정제 전·후 데이터 상태와 검증 결과를 문서화하여 재확인 가능한 산출물로 정리</li>
-      </ul>
-
-      <div class="sub-label">검증 결과</div>
-      <ul class="task-list">
-        <li>전체 230건 기준 매핑 실패 0건 확인</li>
-        <li>중복 데이터 0건 확인</li>
-        <li>region_gu NULL 0건 확인</li>
-        <li>허용값 기준: 동탄구, 만세구, 효행구, 병점구</li>
+        <li>화성시 작은도서관 데이터 전체 230건을 대상으로 주소 기반 행정구역을 4개 허용값으로 표준화 매핑</li>
+        <li>region_gu 허용값 검증 및 NULL 체크 — pytest 기반 테스트 케이스 자동화</li>
+        <li>의도적으로 잘못된 구 이름·결측치를 주입한 뒤 검증 로직이 정확히 감지하는지 확인</li>
+        <li>SQLite 적재 후 조회 쿼리로 적재 결과와 정제 전·후 데이터 상태 비교 문서화</li>
+        <li>전체 230건 기준 매핑 실패 0건, 중복 0건, region_gu NULL 0건 확인</li>
       </ul>
 
       <div class="sub-label">사용 기술</div>
@@ -517,29 +576,23 @@
         <span class="tag">pandas</span>
         <span class="tag">pytest</span>
         <span class="tag">SQLite</span>
-        <span class="tag">SQL</span>
         <span class="tag">CSV</span>
       </div>
 
       <div class="connect-box">
-        <strong>직무 연결</strong>&nbsp; 데이터 현황 파악 → 기준 정의 → 품질 검증 → 적재 확인 → 결과 문서화 흐름을 경험했습니다. 데이터 표준사전 구축, 품질 이슈 분석, 표준 준수 관리 업무의 기초와 연결됩니다.
+        <strong>직무 연결</strong>&nbsp; 검수 기준 설정 → 오류 주입 → 탐지 확인 → 결과 기록까지 QA 전 과정 직접 연습
       </div>
     </div>
 
     <div class="project-card">
-      <div class="project-title">ClinicalTrials.gov 임상시험 데이터 정제 — 공개 임상 데이터 관리</div>
+      <div class="project-title">ClinicalTrials.gov 임상시험 데이터 정제</div>
       <div class="project-badges">
-        <span class="project-badge project-badge--data">데이터 정제</span>
-        <span class="project-badge">중복 제거</span>
-        <span class="project-badge">결측치 기록</span>
-        <span class="project-badge">SQLite 적재</span>
+        <span class="project-badge">데이터 정제 · 적재</span>
+        <span class="project-badge">공개 임상시험 데이터</span>
       </div>
 
       <div class="sub-label">목표</div>
-      <p class="goal-text">
-        공개 임상시험 CSV 데이터를 정제하고 품질 상태를 확인한 뒤 SQLite에 적재했습니다.
-        데이터가 분석에 사용되기 전 중복, 결측, 적재 결과를 확인하는 기본 관리 과정을 실습했습니다.
-      </p>
+      <p class="goal-text">공개 임상시험 CSV 데이터를 정제하고 품질을 확인한 뒤 SQLite에 적재</p>
 
       <div class="project-actions" aria-label="ClinicalTrials.gov 임상시험 데이터 정제 project links">
         <a href="https://github.com/woxihuannuli-coder/clinical-trial-data-research" target="_blank" rel="noopener noreferrer" class="btn btn-outline">🔗 GitHub 보기</a>
@@ -547,11 +600,11 @@
 
       <div class="sub-label">수행 내용</div>
       <ul class="task-list">
-        <li>NCT ID 기준으로 중복 행을 탐지하고 제거</li>
-        <li>컬럼별 결측치 비율을 파악하고 정제 과정에서 기록</li>
-        <li>CSV 데이터를 SQLite에 적재한 뒤 SQL 조회로 적재 결과 검증</li>
-        <li>Anxiety/Depression 관련 임상시험 데이터의 모집 상태와 임상 단계 분포를 SQL로 확인</li>
-        <li>정제 전·후 데이터 상태를 비교하여 데이터 관리 과정의 변화 기록</li>
+        <li>NCT ID 기준 중복 행 탐지 및 제거</li>
+        <li>컬럼별 결측치 비율 파악 및 기록</li>
+        <li>CSV → SQLite 적재 후 조회 쿼리로 적재 결과 검증</li>
+        <li>Anxiety/Depression 관련 임상시험 데이터의 모집 상태·임상 단계 분포를 SQL로 확인</li>
+        <li>정제 전·후 데이터 상태 비교 문서화</li>
       </ul>
 
       <div class="sub-label">사용 기술</div>
@@ -561,59 +614,6 @@
         <span class="tag">SQLite</span>
         <span class="tag">SQL</span>
       </div>
-
-      <div class="connect-box">
-        <strong>직무 연결</strong>&nbsp; 데이터 중복, 결측, 적재 결과를 확인하는 경험은 데이터 품질관리와 DB 현황 분석 업무의 기초가 됩니다.
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="project-title">DodakTalk — AI 헬스케어 서비스 데이터 흐름 검증</div>
-      <div class="project-badges">
-        <span class="project-badge">팀 프로젝트</span>
-        <span class="project-badge">의약품 데이터 구조 파악</span>
-        <span class="project-badge">데이터 적재 확인</span>
-        <span class="project-badge">서비스 데이터 흐름</span>
-      </div>
-
-      <div class="sub-label">프로젝트 개요</div>
-      <p class="goal-text">
-        복약 관리, 감정 기록, AI 약물 상담을 연결한 AI 헬스케어 서비스입니다.
-        본 프로젝트에서는 사용자 입력 데이터가 저장·조회·리포트로 이어지는 흐름을 확인하고,
-        식약처 의약품·DUR 공공데이터 구조를 파악하며 데이터 적재 결과와 검색 기능 동작을 검토했습니다.
-      </p>
-
-      <div class="project-actions" aria-label="DodakTalk project links">
-        <a href="dodactalk-report.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline">📄 발표자료 보기</a>
-        <a href="https://github.com/AI-HealthCare-01/AI_01_05" target="_blank" rel="noopener noreferrer" class="btn btn-outline">🔗 GitHub 보기</a>
-      </div>
-
-      <div class="sub-label">데이터·품질 관련 기여</div>
-      <ul class="task-list">
-        <li>식약처 DUR 공공데이터 CSV 8종 수집 및 파일 구조 파악</li>
-        <li>의약품 마스터 데이터 DB 적재 스크립트 실행 및 4,729건 적재 결과 확인</li>
-        <li>FAISS 임베딩 스크립트 실행 결과와 인덱싱 건수 검토</li>
-        <li>약 검색 기능에서 검색어 시작일치 결과를 우선 노출하도록 검색 로직 개선</li>
-        <li>복약 체크 중복 클릭으로 인한 중복 요청 가능성을 줄이는 로직 개선</li>
-        <li>한국 시간 기준 날짜 처리로 today 판단 오류 개선</li>
-      </ul>
-
-      <div class="sub-label">사용 기술</div>
-      <div class="tag-row">
-        <span class="tag">Python</span>
-        <span class="tag">MySQL</span>
-        <span class="tag">FastAPI</span>
-        <span class="tag">React</span>
-        <span class="tag">TypeScript</span>
-        <span class="tag">GitHub Actions</span>
-      </div>
-
-      <div class="caution-box">
-        ※ LLM·RAG 핵심 모델 개발은 팀원이 담당했습니다. 본인은 일기/감정 기록/리포트 기능 구현과 함께 의약품 데이터 구조 파악, 적재 확인, 검색 품질 개선, 사용자 데이터 흐름 검증을 중심으로 기여했습니다.
-      </div>
-      <div class="connect-box">
-        <strong>직무 연결</strong>&nbsp; 헬스케어 데이터가 서비스 기능으로 연결되는 과정을 확인하며, 데이터 구조 이해와 품질 검증 관점의 중요성을 경험했습니다.
-      </div>
     </div>
   </div>
 </section>
@@ -621,41 +621,39 @@
 <section class="section" id="outputs">
   <div class="wrap">
     <span class="section-eyebrow">Outputs</span>
-    <h2 class="section-title">검증 결과를 남기는 산출물</h2>
-    <p class="section-sub">작업 결과가 말로만 남지 않도록, 기준과 결과를 문서화하는 방식으로 프로젝트를 정리했습니다.</p>
+    <h2 class="section-title">검수 결과를 남기는 산출물</h2>
+    <p class="section-sub">작업 결과가 말로만 남지 않도록, 테스트 조건과 결과를 문서화하는 연습을 해왔습니다.</p>
     <ul class="outputs-list">
       <li>데이터 정제 전·후 상태 비교 기록</li>
       <li>NULL·허용값·중복 검증 결과 정리</li>
-      <li>SQLite 적재 후 SQL 조회 기반 결과 확인</li>
       <li>pytest 테스트 케이스와 오류 주입 확인</li>
-      <li>허용값 기준과 매핑 실패 여부 기록</li>
-      <li>GitHub 기반 작업 이력과 수정 과정 관리</li>
+      <li>GitHub 기반 작업 이력과 기능 개선 기록</li>
     </ul>
   </div>
 </section>
 
-<section class="section section--card" id="governance">
+<section class="section section--card" id="contribute">
   <div class="wrap">
-    <span class="section-eyebrow olive">Contribution Style</span>
-    <h2 class="section-title">데이터 거버넌스 직무에서 기여하고 싶은 방식</h2>
-    <p class="section-sub">신입으로서 데이터 현황을 정확히 파악하고, 기준을 문서화하며, 품질 이슈를 놓치지 않는 실무자로 성장하고자 합니다.</p>
+    <span class="section-eyebrow sage">Contribution Style</span>
+    <h2 class="section-title">제가 기여하는 방식</h2>
+    <p class="section-sub">빠르게 구현하는 것만큼, 실제 사용 흐름에서 문제가 없는지 반복해서 확인하는 태도를 중요하게 생각합니다.</p>
 
-    <div class="governance-grid">
-      <div class="governance-item">
-        <span class="governance-dot">1</span>
-        <div class="governance-text">데이터를 바로 분석하기보다 컬럼, 값의 범위, 결측, 중복, 코드값 기준을 먼저 확인합니다.</div>
+    <div class="contrib-grid">
+      <div class="contrib-item">
+        <span class="contrib-dot">1</span>
+        <div class="contrib-text">사용자가 어떤 순서로 서비스를 이용할지 떠올리며 화면 이동과 입력 흐름을 반복적으로 확인합니다.</div>
       </div>
-      <div class="governance-item">
-        <span class="governance-dot">2</span>
-        <div class="governance-text">정제·검증 기준을 문서화하여 다른 사람이 같은 기준으로 재확인할 수 있도록 남깁니다.</div>
+      <div class="contrib-item">
+        <span class="contrib-dot">2</span>
+        <div class="contrib-text">정상 케이스뿐 아니라 반복 클릭, 날짜 경계, 데이터 갱신 누락처럼 작은 오류 가능성도 확인합니다.</div>
       </div>
-      <div class="governance-item">
-        <span class="governance-dot">3</span>
-        <div class="governance-text">SQL과 Python을 활용해 데이터 품질 이슈를 반복적으로 점검하고 결과를 수치로 기록합니다.</div>
+      <div class="contrib-item">
+        <span class="contrib-dot">3</span>
+        <div class="contrib-text">데이터가 저장·조회·검색·리포트로 이어지는 과정에서 값이 어긋나지 않는지 확인합니다.</div>
       </div>
-      <div class="governance-item">
-        <span class="governance-dot">4</span>
-        <div class="governance-text">개념·논리·물리 데이터 모델링, 메타데이터, 데이터 표준사전 역량을 계속 학습하고 있습니다.</div>
+      <div class="contrib-item">
+        <span class="contrib-dot">4</span>
+        <div class="contrib-text">AI 도구를 활용하더라도 결과를 직접 실행하고 검토하며, 발견한 문제를 기록합니다.</div>
       </div>
     </div>
   </div>
@@ -664,29 +662,29 @@
 <section class="section" id="about">
   <div class="wrap">
     <span class="section-eyebrow">About</span>
-    <h2 class="section-title">데이터가 정확히 정의·정리·검증되는 과정에 관심이 있습니다.</h2>
-    <p class="section-sub">오류를 빠짐없이 찾고, 기준과 결과를 기록하는 일에 집중합니다.</p>
+    <h2 class="section-title">데이터가 정확히 정리·검증되는 과정에 관심이 있습니다.</h2>
+    <p class="section-sub">오류를 빠짐없이 찾고 기록하는 일에 집중합니다.</p>
 
     <div class="about-grid">
       <div class="about-card">
         <div class="about-icon">📌</div>
         <div class="about-name">데이터 품질 관심</div>
-        <div class="about-desc">부트캠프에서 머신러닝·딥러닝을 학습하며 데이터 품질이 모델 결과와 서비스 신뢰도에 직접 영향을 준다는 점을 경험했습니다.</div>
+        <div class="about-desc">부트캠프에서 머신러닝·딥러닝을 학습하며 데이터 품질이 모델 결과에 직접 영향을 준다는 점을 경험했습니다.</div>
       </div>
       <div class="about-card">
-        <div class="about-icon">📚</div>
-        <div class="about-name">데이터 표준화 학습 방향</div>
-        <div class="about-desc">허용값, 코드값, 컬럼 정의, 데이터 사전, 메타데이터 관리처럼 데이터가 일관되게 관리되는 기준에 관심을 두고 학습하고 있습니다.</div>
+        <div class="about-icon">🧪</div>
+        <div class="about-name">QA 관점의 반복 확인</div>
+        <div class="about-desc">기능이 한 번 정상 작동하는 데서 끝내지 않고, 사용자가 실제로 이용할 흐름을 따라가며 오류 가능성을 확인합니다.</div>
       </div>
       <div class="about-card">
         <div class="about-icon">📝</div>
         <div class="about-name">문서화와 기록</div>
-        <div class="about-desc">방송작가 경험을 통해 자료를 구조화하고, 정보의 정확성을 확인하며, 수정 이력을 기록하는 태도를 길렀습니다.</div>
+        <div class="about-desc">방송작가 경험을 통해 정보 확인, 정리, 수정 이력 기록의 중요성을 체감했습니다.</div>
       </div>
       <div class="about-card">
         <div class="about-icon">🌱</div>
         <div class="about-name">학습 태도</div>
-        <div class="about-desc">부족한 개념·논리·물리 모델링과 데이터 아키텍처 영역은 계속 보완하며, 데이터 거버넌스 실무자로 성장하고자 합니다.</div>
+        <div class="about-desc">부족한 부분은 공부하며 보완하고, 개발자와 협업할 수 있는 데이터·검증 역량을 쌓고 있습니다.</div>
       </div>
     </div>
   </div>
@@ -696,18 +694,18 @@
   <div class="wrap">
     <div class="links-cta">
       <h2 class="section-title">Contact</h2>
-      <p class="section-sub">데이터 품질관리, 데이터 표준화, 데이터 QA와 연결되는 경험을 계속 쌓고 있습니다.</p>
+      <p class="section-sub">데이터 QA, AI 서비스 품질 검증, 기능 구현 보조와 연결되는 경험을 계속 쌓고 있습니다.</p>
       <div class="link-row">
         <a href="mailto:woxihuannuli@gmail.com" class="email-pill">✉️ woxihuannuli@gmail.com</a>
         <a href="https://github.com/woxihuannuli-coder" target="_blank" rel="noopener noreferrer" class="btn btn-outline">GitHub 보기</a>
-        <a href="https://github.com/woxihuannuli-coder/local-public-indicator-pipeline" target="_blank" rel="noopener noreferrer" class="btn btn-outline">데이터 QA 프로젝트</a>
+        <a href="dodactalk-report.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline">도닥톡 발표자료</a>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  © 2026 김지수 Portfolio · Data Quality · Data Standardization · Data QA
+  © 2026 김지수 Portfolio · Data QA · AI Service Quality
 </footer>
 
 </body>
